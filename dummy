@@ -7,6 +7,13 @@ mvn install:install-file -Dfile=/path/to/ibatis-sqlmap-2.3.4.726.jar \
                          -Dpackaging=jar
 --------------------------------------
 lib/ibatis-sqlmap-2.3.4.726.jar
+---------------------
+Running the Application
+Start the Oracle database.
+Run the Spring Boot application.
+Test the APIs using Postman or curl:
+Get user by ID: GET http://localhost:8080/users/1
+Call stored procedure: GET http://localhost:8080/users/stored-procedure/1
 
 -----------------------
 SLF4J: No SLF4J providers were found.
