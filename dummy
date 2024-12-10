@@ -5,3 +5,54 @@ mvn install:install-file -Dfile=/path/to/ibatis-sqlmap-2.3.4.726.jar \
                          -DartifactId=ibatis-sqlmap \
                          -Dversion=2.3.4.726 \
                          -Dpackaging=jar
+--------------------------------------
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.10)
+
+2024-12-10 01:05:26.901  INFO 24684 --- [           main] com.example.config.ApplicationOld        : Starting ApplicationOld using Java 1.8.0_231 on vetsodi10016345 with PID 24684 (C:\Users\sverm174\modFact-tool\old-oracle-ibatis\old-spring-ibatis\spring-ibatis-oracle\target\classes started by sverm174 in C:\Users\sverm174\modFact-tool\old-oracle-ibatis\old-spring-ibatis\spring-ibatis-oracle)
+2024-12-10 01:05:26.903  INFO 24684 --- [           main] com.example.config.ApplicationOld        : No active profile set, falling back to 1 default profile: "default"
+2024-12-10 01:05:27.641  WARN 24684 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'persistenceExceptionTranslationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/dao/PersistenceExceptionTranslationAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor]: Factory method 'persistenceExceptionTranslationPostProcessor' threw exception; nested exception is java.lang.NoSuchMethodError: org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor.setProxyTargetClass(Z)V
+2024-12-10 01:05:27.651  INFO 24684 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-12-10 01:05:27.670 ERROR 24684 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration.persistenceExceptionTranslationPostProcessor(PersistenceExceptionTranslationAutoConfiguration.java:49)
+
+The following method did not exist:
+
+    org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor.setProxyTargetClass(Z)V
+
+The calling method's class, org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration, was loaded from the following location:
+
+    jar:file:/C:/Users/sverm174/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.7.10/spring-boot-autoconfigure-2.7.10.jar!/org/springframework/boot/autoconfigure/dao/PersistenceExceptionTranslationAutoConfiguration.class
+
+The called method's class, org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor, is available from the following locations:
+
+    jar:file:/C:/Users/sverm174/.m2/repository/org/springframework/spring-dao/2.0.8/spring-dao-2.0.8.jar!/org/springframework/dao/annotation/PersistenceExceptionTranslationPostProcessor.class
+    jar:file:/C:/Users/sverm174/.m2/repository/org/springframework/spring-tx/5.3.26/spring-tx-5.3.26.jar!/org/springframework/dao/annotation/PersistenceExceptionTranslationPostProcessor.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor: file:/C:/Users/sverm174/.m2/repository/org/springframework/spring-dao/2.0.8/spring-dao-2.0.8.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration and org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor
+
+
