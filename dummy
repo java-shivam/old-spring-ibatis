@@ -6,7 +6,9 @@ mvn install:install-file -Dfile=/path/to/ibatis-sqlmap-2.3.4.726.jar \
                          -Dversion=2.3.4.726 \
                          -Dpackaging=jar
 --------------------------------------
+lib/ibatis-sqlmap-2.3.4.726.jar
 
+-----------------------
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
