@@ -46,6 +46,173 @@
     INVENTORY_ID	NUMBER
     EXP_REQID	NUMBER
 
+============================
+// Main Application Class
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+
+// Entity Class
+package com.example.demo.entity;
+
+import jakarta.persistence.*;
+import java.util.Date;
+
+@Entity
+@Table(name = "rep_report")
+public class Report {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "REPORT_ID")
+    private Long reportId;
+
+    @Column(name = "REPORT_TYPE_CD")
+    private String reportTypeCd;
+
+    @Column(name = "REPORT_NAME")
+    private String reportName;
+
+    @Column(name = "REMOVAL_DATE")
+    private Date removalDate;
+
+    @Column(name = "LT_LIST_CLASS_CD")
+    private String ltListClassCd;
+
+    @Column(name = "LT_LIST_ID1")
+    private String ltListId1;
+
+    @Column(name = "AS_OF_DATE1")
+    private Date asOfDate1;
+
+    @Column(name = "LT_LIST_INT_ID1")
+    private Long ltListIntId1;
+
+    @Column(name = "VERSION_CD1")
+    private String versionCd1;
+
+    @Column(name = "LT_LIST_ID2")
+    private String ltListId2;
+
+    @Column(name = "AS_OF_DATE2")
+    private Date asOfDate2;
+
+    @Column(name = "LT_LIST_INT_ID2")
+    private Long ltListIntId2;
+
+    @Column(name = "VERSION_CD2")
+    private String versionCd2;
+
+    @Column(name = "LAYOUT_TYPE_CD")
+    private String layoutTypeCd;
+
+    @Column(name = "LAYOUT_ID")
+    private String layoutId;
+
+    @Column(name = "OUTPUT_FILE_TYPE_CD")
+    private String outputFileTypeCd;
+
+    @Column(name = "REQUEST_PRIORITY")
+    private Integer requestPriority;
+
+    @Column(name = "REQUEST_PROGRAM")
+    private String requestProgram;
+
+    @Column(name = "CUSTOMER_ID")
+    private String customerId;
+
+    @Column(name = "REQUEST_USER")
+    private String requestUser;
+
+    @Column(name = "PROCESS_TIME")
+    private Date processTime;
+
+    @Column(name = "START_TIMESTAMP")
+    private Date startTimestamp;
+
+    @Column(name = "FINISH_TIMESTAMP")
+    private Date finishTimestamp;
+
+    @Column(name = "STATUS_CD")
+    private String statusCd;
+
+    @Column(name = "SERVICE_ID")
+    private String serviceId;
+
+    @Column(name = "FILE_PATHNAME")
+    private String filePathname;
+
+    @Column(name = "EMAIL_ADDRESS")
+    private String emailAddress;
+
+    @Column(name = "MESSAGES")
+    private String messages;
+
+    @Column(name = "REC_CREATE_TIMESTAMP")
+    private Date recCreateTimestamp;
+
+    @Column(name = "REC_CREATE_USERID")
+    private String recCreateUserid;
+
+    @Column(name = "LAST_UPD_TIMESTAMP")
+    private Date lastUpdTimestamp;
+
+    @Column(name = "LAST_UPD_USERID")
+    private String lastUpdUserid;
+
+    @Column(name = "CARRIER_ID1")
+    private String carrierId1;
+
+    @Column(name = "ACCOUNT_ID1")
+    private String accountId1;
+
+    @Column(name = "GROUP_ID1")
+    private String groupId1;
+
+    @Column(name = "CARRIER_ID2")
+    private String carrierId2;
+
+    @Column(name = "ACCOUNT_ID2")
+    private String accountId2;
+
+    @Column(name = "GROUP_ID2")
+    private String groupId2;
+
+    @Column(name = "STORED_QUERY_INT_ID")
+    private Long storedQueryIntId;
+
+    @Column(name = "DOWNLOAD_CNT")
+    private Integer downloadCnt;
+
+    @Column(name = "SCHEDULE_IND")
+    private String scheduleInd;
+
+    @Column(name = "IMPORT_FILE_PATH")
+    private String importFilePath;
+
+    @Column(name = "ADDTNL_ALPHA_INFO")
+    private String addtnlAlphaInfo;
+
+    @Column(name = "ADDTNL_NUMERIC_INFO")
+    private Long addtnlNumericInfo;
+
+    @Column(name = "INVENTORY_ID")
+    private Long inventoryId;
+
+    @Column(name = "EXP_REQID")
+    private Long expReqId;
+
+    // Getters and Setters
+    // (Auto-generate getters and setters for all fields using your IDE or tools like Lombok if available)
+}
 
 
 
