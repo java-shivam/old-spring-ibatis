@@ -1,3 +1,8 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /myapp
+
 ---sql-- col- table rep_report - create the @entity class
     REPORT_ID	NUMBER
     REPORT_TYPE_CD	VARCHAR2
