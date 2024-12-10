@@ -8,56 +8,22 @@ mvn install:install-file -Dfile=/path/to/ibatis-sqlmap-2.3.4.726.jar \
 --------------------------------------
 lib/ibatis-sqlmap-2.3.4.726.jar
 ---------------------
-B/s)
-[INFO] Installing C:\Users\sverm174\modFact-tool\old-oracle-ibatis\old-spring-ibatis\spring-ibatis-oracle\target\spring-ibatis-oracle-1.0.0-SNAPSHOT.jar to C:\Users\sverm174\.m2\repo1\m3-3.9.6\com\example\spring-ibatis-oracle\1.0.0-SNAPSHOT\spring-ibatis-oracle-1.0.0-SNAPSHOT.jar
-[INFO] Installing C:\Users\sverm174\modFact-tool\old-oracle-ibatis\old-spring-ibatis\spring-ibatis-oracle\pom.xml to C:\Users\sverm174\.m2\repo1\m3-3.9.6\com\example\spring-ibatis-oracle\1.0.0-SNAPSHOT\spring-ibatis-oracle-1.0.0-SNAPSHOT.pom
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  31.810 s
-[INFO] Finished at: 2024-12-10T11:29:15-05:00
-[INFO] ------------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd"> 
+<sqlMapConfig>
+    <sqlMap resource="mappers/UserMapper.xml" />
+</sqlMapConfig>
 
-C:\Users\sverm174\modFact-tool\old-oracle-ibatis\old-spring-ibatis\spring-ibatis-oracle>mvn build
-[INFO] Scanning for projects...
-[INFO]
-[INFO] ------------------< com.example:spring-ibatis-oracle >------------------
-[INFO] Building spring-ibatis-oracle 1.0.0-SNAPSHOT
-[INFO]   from pom.xml
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  0.749 s
-[INFO] Finished at: 2024-12-10T11:39:06-05:00
-[INFO] ------------------------------------------------------------------------
-[ERROR] Unknown lifecycle phase "build". You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: pre-clean, clean, post-clean, validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-site, site, post-site, site-deploy. -> [Help 1]
-[ERROR]
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR]
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/LifecyclePhaseNotFoundException
+----------------------------
 
-C:\Users\sverm174\modFact-tool\old-oracle-ibatis\old-spring-ibatis\spring-ibatis-oracle>mvn clean build
-[INFO] Scanning for projects...
-[INFO]
-[INFO] ------------------< com.example:spring-ibatis-oracle >------------------
-[INFO] Building spring-ibatis-oracle 1.0.0-SNAPSHOT
-[INFO]   from pom.xml
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  0.750 s
-[INFO] Finished at: 2024-12-10T11:39:28-05:00
-[INFO] ------------------------------------------------------------------------
-[ERROR] Unknown lifecycle phase "build". You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: pre-clean, clean, post-clean, validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-site, site, post-site, site-deploy. -> [Help 1]
-[ERROR]
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR]
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/LifecyclePhaseNotFoundException
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
 
-C:\Users\sverm174\modFact-tool\old-oracle-ibatis\old-spring-ibatis\spring-ibatis-oracle>
+<sqlMap namespace="UserMapper">
+    <select id="getUserById" parameterClass="int" resultClass="java.lang.String">
+        SELECT report_name FROM REP_REPORT WHERE report_id = #id#
+    </select>
+   <!--  <procedure id="callGetUserById" parameterClass="map" resultClass="java.util.Map">
+        {CALL GET_USER_BY_ID(#{id, mode=IN}, #{name, mode=OUT}, #{email, mode=OUT})}
+    </procedure> -->
+</sqlMap>
