@@ -1,1 +1,7 @@
 Missing artifact com.ibatis:ibatis-sqlmap:jar:2.3.4.726
+-----------------
+mvn install:install-file -Dfile=/path/to/ibatis-sqlmap-2.3.4.726.jar \
+                         -DgroupId=com.ibatis \
+                         -DartifactId=ibatis-sqlmap \
+                         -Dversion=2.3.4.726 \
+                         -Dpackaging=jar
