@@ -2,6 +2,34 @@ server:
   port: 8081
   servlet:
     context-path: /myapp
+-----------------------------
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+
+@RestController
+public class MyController {
+
+    @GetMapping("/success")
+    public ResponseEntity<String> getSuccessResponse() {
+        String message = "Request was successful";
+        return new ResponseEntity<>(message, HttpStatus.OK); // 200 OK with a body
+    }
+
+    @GetMapping("/notfound")
+    public ResponseEntity<String> getNotFoundResponse() {
+        String message = "Resource not found";
+        return new ResponseEntity<>(message, HttpStatus.NOT_FOUND); // 404 Not Found with a body
+    }
+
+    @GetMapping("/created")
+    public ResponseEntity<String> getCreatedResponse() {
+        String message = "Resource created successfully";
+        return ResponseEntity.status(HttpStatus.CREATED).body(message); // 201 Created with a body
+    }
+}
+
 
 ---sql-- col- table rep_report - create the @entity class
     REPORT_ID	NUMBER
