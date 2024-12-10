@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="UserMapper">
+    <select id="getUserById" parameterClass="int" resultClass="com.example.model.User">
+        SELECT * FROM USERS WHERE ID = #id#
+    </select>
+    <procedure id="callGetUserById" parameterClass="map" resultClass="java.util.Map">
+        {CALL GET_USER_BY_ID(#{id, mode=IN}, #{name, mode=OUT}, #{email, mode=OUT})}
+    </procedure>
+</sqlMap>
