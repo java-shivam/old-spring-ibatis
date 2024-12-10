@@ -13,3 +13,14 @@ This application has no explicit mapping for /error, so you are seeing this as a
 
 Tue Dec 10 08:14:16 EST 2024
 There was an unexpected error (type=Internal Server Error, status=500).
+
+---------
+@RestController
+public class CustomErrorController implements org.springframework.boot.web.servlet.error.ErrorController {
+
+    @RequestMapping("/error")
+    public String handleError() {
+        return "An error occurred!";
+    }
+}
+
